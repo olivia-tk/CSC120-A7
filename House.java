@@ -25,6 +25,17 @@ public class House extends Building {
   public void moveIn(String name) {
     residents.add(name);
 }
+
+// Overloading moveIn method to accept resident's age as well
+public void moveIn(String name, int age) {
+  residents.add(name + " (Age: " + age + ")");
+}
+
+// Overloading moveIn method to accept resident's age and income as well
+public void moveIn(String name, int age, int income) {
+  residents.add(name + " (Age: " + age + ")" + " (Income: " + income + ")");
+}
+
 //move out method
   public String moveOut(String name) {
     if (residents.contains(name)) {
@@ -74,5 +85,7 @@ public static void main(String[] args) {
   System.out.println("Number of residents after move out: " + myHouse.nResidents());
   System.out.println("Residents after move out: " + myHouse.residents);
   System.out.println("You have built a house: 🏠");
+  myHouse.moveIn("Alice", 30);
+  myHouse.moveIn("Bob", 25, 100000); 
 }
 }

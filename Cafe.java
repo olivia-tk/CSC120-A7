@@ -27,6 +27,28 @@ public class Cafe extends Building {
             System.out.println("Sprry, we are out of stock for the requested coffee.");
         }
     }
+
+//overloaded sell coffee method
+    public void sellCoffee(int size) {
+        // Default values for sugar packets and creams
+        int defaultnSugarPackets = 1;
+        int defaultnCreams = 1;
+        
+        // Call the original sellCoffee method with default values
+        sellCoffee(size, defaultnSugarPackets, defaultnCreams);
+    }
+
+    //overloaded sell coffee method
+    public void sellCoffee(int size, int nSugarPackets) {
+        // Default values for sugar packets and creams
+        int defaultnCreams = 1;
+        
+        // Call the original sellCoffee method with default values
+        sellCoffee(size, nSugarPackets, defaultnCreams);
+    }
+
+
+
 //restock method
     private void restock(int nCoffeeOunces, int nSugarPackets, int nCreams, int nCups) {
         // Private method to restock inventory
@@ -50,5 +72,7 @@ public class Cafe extends Building {
         myCafe.sellCoffee(16, 3, 2);
         myCafe.restock(200, 100, 50, 200); // Restock inventory
         myCafe.sellCoffee(12, 2, 3); // Sell coffee again after restocking
+        myCafe.sellCoffee(8);
+        myCafe.sellCoffee(8, 2);
     }
 }

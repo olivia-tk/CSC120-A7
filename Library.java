@@ -17,6 +17,19 @@ public class Library extends Building {
     public void addTitle(String title) {
       collection.put(title, true);
     }
+//overloaded addTitle method that allows input on author of the book
+    public void addTitle(String title, String author) {
+      collection.put(title, true);
+      System.out.println("Added: " + title + " by " + author);
+  }
+///overloaded addTitle method that allows input on author, as well as the publication date of the book
+    public void addTitle(String title, String author, int pubDate) {
+      collection.put(title, true);
+      System.out.println("Added: " + title + " by " + author + " published " + pubDate);
+  }
+
+
+
     //removing book from the library
         public String removeTitle(String title){
           if (collection.containsKey(title)) {
@@ -86,5 +99,6 @@ public static void main(String[] args) {
     System.out.println("Is '1984' available after return? " + myLibrary.isAvailable("1984"));
     myLibrary.removeTitle("Pride and Prejudice");
     myLibrary.printCollection();
+    myLibrary.addTitle("The Catcher in the Rye", "J.D. Salinger", 1951);
 }
 }
